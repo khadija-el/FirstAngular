@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './Users/user/user.component';
 import { ProfilComponent } from './Profils/profil/profil.component';
 import { MatModule } from './mat.module';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MatModule } from './mat.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatModule
+    MatModule,
+    HttpClient
     
   ],
   providers: [],
