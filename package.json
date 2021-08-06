@@ -9,7 +9,6 @@
     "test": "ng test",
     "init": "git init && git remote add origin https://github.com/khadija-el/FirstAngular.git",
     "push": "git add . && git commit -m \"me & you\" && git push -u origin master"
-    
   },
   "private": true,
   "dependencies": {
@@ -18,9 +17,11 @@
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
     "@angular/forms": "~12.2.0",
+    "@angular/material": "^12.2.0",
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@material/dialog": "^12.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
