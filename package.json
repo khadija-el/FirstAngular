@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "init": "git init && git remote add origin https://github.com/khadija-el/FirstAngular.git",
+    "push": "git add . && git commit -m \"me & you\" && git push -u origin master",
+    "ci": "npm run f-p && npm run push && echo App deployed successfuly, open your browser on https://mohamed-mourabit.com",
+    "echo": "echo App deployed successfuly, open your browser on https://djm2x.github.io/me/"
+  
   },
   "private": true,
   "dependencies": {
