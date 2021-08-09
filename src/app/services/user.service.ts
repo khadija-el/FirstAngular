@@ -1,10 +1,11 @@
 import { SuperService } from './super.service';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
-
-@Injectable({
-  providedIn: 'root'
-})
+// const API_URL = environment.api + '/users';
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class UserService extends SuperService<any> {
 
   constructor() {
@@ -20,9 +21,9 @@ export class UserService extends SuperService<any> {
     return this.http.get(`${this.urlApi}/users/getUsers?start=` + (page - 1) * perPage + '&number=' + perPage + '&nom=' + nom + '&prenom=' + prenom + '&organisme=' + organisme)
   }
 
-  getAll(startIndex, pageSize, sortBy, sortDir, nom = '*', prenom = '*', organisme = 0) {
+  getAll(startIndex, pageSize, sortBy, sortDir) {
     return this.http.get(
-      `${this.urlApi}/${this.controller}/GetAll/${startIndex}/${pageSize}/${sortBy}/${sortDir}/${nom}/${prenom}/${organisme}`
+      `${this.urlApi}/${this.controller}/GetAll/${startIndex}/${pageSize}/${sortBy}/${sortDir}`
       );
   }
 

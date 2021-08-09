@@ -4,10 +4,6 @@ import { Inject, Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { InjectService } from '../inject.service';
 
-// const API_URL = environment.apiUrl;
-// @Injectable({
-//   providedIn: 'root'
-// })
 export class SuperService<T> implements ISuperService {
 
   // @Inject(HttpClient) protected http: HttpClient;

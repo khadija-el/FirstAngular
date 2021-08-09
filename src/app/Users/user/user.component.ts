@@ -48,7 +48,7 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getPage(0, 10, 'id', 'desc', '*', '*', 0);
+    this.getPage(0, 10, 'id', 'desc');
     merge(...[this.sort.sortChange, this.paginator.page, this.update]).subscribe(
       r => {
         r === true ? this.paginator.pageIndex = 0 : r = r;
@@ -60,16 +60,14 @@ export class UserComponent implements OnInit {
           this.paginator.pageSize,
           this.sort.active ? this.sort.active : 'id',
           this.sort.direction ? this.sort.direction : 'desc',
-          this.nom.value ? this.nom.value : '*',
-          this.prenom.value ? this.prenom.value : '*',
-          this.organisme.value ? this.organisme.value : 0,
+          
         );
       }
     );
   }
 
-  getPage(startIndex, pageSize, sortBy, sortDir, nom, prenom, organisme) {
-    this.uow.users.getAll(startIndex, pageSize, sortBy, sortDir, nom, prenom, organisme).subscribe(
+  getPage(startIndex, pageSize, sortBy, sortDir ) {
+    this.uow.users.getAll(startIndex, pageSize, sortBy, sortDir).subscribe(
       (r: any) => {
         // console.log(r);
         this.dataSource = r.list;
