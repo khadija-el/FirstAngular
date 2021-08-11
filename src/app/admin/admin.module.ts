@@ -14,6 +14,7 @@ import { UpdateComponent } from './user/update/update.component';
 import { TitleComponent } from './_utlitaire/title/title.component';
 import { DeleteComponent } from './_utlitaire/delete/delete.component';
 import { UpdateProfilComponent } from './profil/update-profil/update-profil.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UpdateProfilComponent } from './profil/update-profil/update-profil.comp
     UpdateComponent,
     DeleteComponent,
     TitleComponent,
-    UpdateProfilComponent
+    UpdateProfilComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,
