@@ -1,0 +1,25 @@
+section {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  
+  .border-left {border-left: 10px solid #d17c36;}
+  .border-right {border-right: 10px solid #d17c36;}
+  .super-title {
+    // border-left: 10px solid #d17c36 ;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    div {
+      background-color: #a19b9e;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      h3 {
+        color: white;
+        margin: 0 0 0 0;
+        padding: 0 5px;
+      }
+    }
+  }

@@ -7,6 +7,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { UowService } from 'src/app/services/uow.service';
+import { DeleteService } from '../_utlitaire/delete/delete.service';
+
 
 @Component({
   selector: 'app-user',
@@ -44,7 +46,7 @@ export class UserComponent implements OnInit {
     private router: Router,
     private uow: UowService,
     public dialog: MatDialog,
-  //private mydialog: DeleteService,
+    private mydialog: DeleteService,
   ) { }
 
   ngOnInit() {
@@ -87,10 +89,10 @@ export class UserComponent implements OnInit {
   }
 
   async delete(id) {
-    // const r = await this.mydialog.openDialog('Utilisateur').toPromise();
-    // if (r === 'ok') {
-    //   this.uow.users.delete(id).subscribe(() => this.update.next(true));
-    // }
+    const r = await this.mydialog.openDialog('Utilisateur').toPromise();
+    if (r === 'ok') {
+      this.uow.users.delete(id).subscribe(() => this.update.next(true));
+    }
   }
 
 }

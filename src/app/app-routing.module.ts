@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ProfilComponent } from './Profils/profil/profil.component';
-import { UserComponent } from './Users/user/user.component';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'user', component: UserComponent, data: { state: 'connection' } },
-  { path: 'profil', component: ProfilComponent, data: { state: 'connection' } },
- 
+  { path: '', redirectTo: 'admin', pathMatch: 'full'},
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)/*, canActivate: [MyGuard]*/},
+  // { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule), },
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      relativeLinkResolution: 'legacy'}),
+    ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

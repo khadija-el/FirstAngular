@@ -1,0 +1,109 @@
+<!-- Content Header (Page header) -->
+
+<div class="host">
+    <div>
+      <app-title title="Utilisateur"></app-title>
+      <!-- right column -->
+      <form (ngSubmit)="submit(myForm)" [formGroup]="myForm">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-card>
+              <div style="margin-bottom: 20px;">
+                <h5>Informations personelles</h5>
+              </div>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="nom" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Prénom</mat-label>
+                <input matInput formControlName="prenom" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Adresse email</mat-label>
+                <input matInput formControlName="email" required>
+              </mat-form-field>
+  
+              <!-- <mat-form-field appearance="fill">
+                <mat-label>Organisme</mat-label>
+                <mat-select formControlName="idOrganisme">
+                  <mat-option *ngFor="let org of organismes | async" [value]="org.id">{{ org.label }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+   -->
+              <mat-form-field appearance="fill">
+                <mat-label>Profil</mat-label>
+                <mat-select formControlName="idProfil">
+                  <mat-option *ngFor="let profil of profils | async" [value]="profil.id">{{ profil.label }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Adresse de résidence</mat-label>
+                <input matInput formControlName="adresse" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Téléphone(Mobile)</mat-label>
+                <input matInput formControlName="tel" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Téléphone(Fix)</mat-label>
+                <input matInput formControlName="fix" required>
+              </mat-form-field>
+            </mat-card>
+          </div>
+  
+          <div class="col-md-6">
+            <mat-card>
+              <div style="margin-bottom: 20px;">
+                <h5>Informations d'authentification</h5>
+              </div>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Nom d'utilisateur</mat-label>
+                <input matInput formControlName="username" required>
+              </mat-form-field>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <mat-form-field appearance="fill">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required>
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Répéter Mot de passe</mat-label>
+                <input matInput formControlName="password2" [type]="hide2 ? 'password' : 'text'" required>
+                <button type="button" mat-icon-button matSuffix (click)="hide2 = !hide2"
+                  [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+  
+              <mat-checkbox formControlName="actif"> Actif</mat-checkbox>
+            </mat-card>
+            <div class="actions">
+              <button style="margin-top: 20px;"
+                [disabled]="this.myForm.invalid || this.myForm.get('password').value !== this.myForm.get('password2').value"
+                mat-raised-button color="primary" type="submit">
+                Enregister
+              </button>
+  
+              <button style="margin-top: 20px; margin-right: 20px;" [routerLink]="['/admin/user']" mat-raised-button
+                type="button">
+                Retour
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
