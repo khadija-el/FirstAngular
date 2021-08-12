@@ -7,7 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { MatModule } from '../mat.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MyTranslateService } from '../my.translate.service';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatModule,
     TranslateModule,
     
-     ]
+     ],
+   
 })
 export class AuthModule { }

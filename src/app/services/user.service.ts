@@ -28,7 +28,7 @@ export class UserService extends SuperService<any> {
   }
 
   login(model) {
-    return this.http.post(`${this.urlApi}/users/login`, model);
+    return this.http.post(`${this.urlApi}/users/logIn`, model);
   }
 
 }

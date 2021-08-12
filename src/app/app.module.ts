@@ -8,6 +8,8 @@ import { InjectService } from './inject.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule,TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -22,6 +24,14 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, './assets/i18n/', '.json'),
+        deps: [HttpClient]
+      }
+    }),
      
   ],
   providers: [],

@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit(myForm) {
-    // // console.log(myForm.value);
+     console.log(myForm.value);
     const o = myForm.value;
     // this.snackbar.openMySnackBar('login...');
     // console.log(o);
@@ -92,6 +92,10 @@ export class LoginComponent implements OnInit {
       //   this.snackbar.dismiss();
       // }
     });
+   errco:(error)=>{
+     console.log(error);
+   }
+    
   }
 
   resetForm() {
